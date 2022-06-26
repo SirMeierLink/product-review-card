@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+:root {
+    /* Montserrat & Fraunces Font Family*/
+    --montserrat: 'Montserrat', sans-serif;
+    --fraunces: 'Fraunces', serif;
+
+    /* Primary Colors */
+    --dark-cyan: hsl(158, 36%, 37%);
+    --very-dark-cyan: hsl(158, 68%, 17%);
+    --cream: hsl(30, 38%, 92%);
+
+    /* Neutral Colors */
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+}
+
+body {
+    font-size: 14px;
+    font-family: var(--montserrat);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--cream);
+}
+
+.perfume-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 750px;
+    border-radius: 8px;
+    background-color: #fff;
+    color: var(--dark-grayish-blue);
+}
+
+img[alt="Gabrielle-chanel"] {
+    width: 100%;
+    height: 100%;
+    /* object-fit: contain; */
+    border-radius: 8px 0 0 8px;
+}
+
+.perfume-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 28px;
+}
+
+.perfume-info > p:first-child {
+    margin-bottom: 0;
+    font-size: 18px;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+.perfume-info > p:nth-of-type(2) {
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+.perfume-info h1 {
+    font-family: var(--fraunces);
+    color: #000;
+    font-size: 2.5rem;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+/* Styling the pricing */
+.perfume-price {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: var(--fraunces);
+}
+
+.perfume-price p:first-child {
+    font-size: 35px;
+    color: var(--dark-cyan);
+    margin-right: 30px;
+}
+
+.perfume-price p:last-child {
+    text-decoration: line-through;
+    color: var(--dark-grayish-blue);
+    font-size: 15px;
+    font-weight: normal;
+}
+
+/* Styling the button */
+button {
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+    padding: 20px 0;
+    background-color: var(--dark-cyan);
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+/* Shopping cart image */
+img[alt="shopping cart"] {
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 20px;
+}
+
+button:hover {
+    background-color: var(--very-dark-cyan);
+}
+
+/* Hiding one shopping cart to show another */
+.hide-card {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .perfume-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px;
+        width: 390px;
+    }
+
+    img[alt="Gabrielle-chanel"] {
+        border-radius: 8px 8px 0 0;
+    }
+
+    .perfume-info > p:first-child,
+    .perfume-info > p:nth-of-type(2) {
+        margin-top: 0;
+    }
+
+    .perfume-info h1 {
+        font-family: var(--fraunces);
+        font-size: 2rem;
+        word-spacing: 5px;
+        margin-top: 10px;
+        line-height: 35px;
+    }
+    
+    .perfume-info > p:nth-of-type(2) {
+        font-size: 14px;
+        line-height: 30px;
+        word-spacing: 0px;
+        margin-top: 10px;
+    }
+
+    .perfume-current-price {
+        margin-bottom: 20px;
+    }
+
+    .perfume-old-price {
+        margin-bottom: 0;
+    }
+
+    button {
+        margin-top: 0;
+    }
+    
+}
+
+/* Displaying this would distort the design */
+.attribution { display: none; font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
